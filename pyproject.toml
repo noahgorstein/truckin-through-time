@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ttt"
+version = "0.0.1"
+description = "Truckin' Through Time: Building a Grateful Dead Setlist Database"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE.txt"}
+keywords = ["gratefuldead", "webscraping"]
+authors = [
+  {name = "Noah Gorstien", email = "ngorstein@gmail.com" }
+]
+maintainers = [
+  {name = "Noah Gorstien", email = "ngorstein@gmail.com" }
+]
+dependencies = [
+	"requests==2.32.2",
+	"beautifulsoup4==4.12.3",
+	"sqlmodel==0.0.19",
+	"ollama==0.2.0",
+	"click==8.1.7"
+]
+
+[project.optional-dependencies]
+dev = [
+	"black==24.4.2",
+	"isort==5.13.2",
+	"flake8==7.0.0",
+	"mypy==1.10.1",
+	"types-requests==2.32.0.20240622",
+	"types-beautifulsoup4==4.12.0.20240511"
+]
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+
+[project.scripts]
+scrape = "scraper.cli:scrape"
+
+[tool.mypy]
+ignore_missing_imports = true
